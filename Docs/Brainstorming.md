@@ -43,7 +43,7 @@ Other cool themes
 * You are not the main player
 * Two points of view
 
-Space & one button + two points of view?
+Mix themes: Space & one button + two points of view?
 
 Space = shares?
 
@@ -53,3 +53,17 @@ Space = shares?
 	* available shares
 	* shares selling
 	* **What is the mechanic vs. luck?**
+* Office space theme
+	* Keep changing cubicle
+	* Have to preserve space to keep working
+* What if cloud upload/storage was managed by hand?
+	* Main characters = people with cell phones
+	* You watch the people go about their lives, taking photos at variable rates.
+	* You have to trigger when and how to upload data to minimize
+		* Your own server loads
+		* Battery drain of uses (based on cell signal)
+		* Storage space left on device
+	* People get mad and business goes well if there is always space, but really poorly if there is little space.
+	* When a customer gets mad, they leave.
+		* as the game progresses you get more users
+			* which further reduces space/bandwidth, etc.
