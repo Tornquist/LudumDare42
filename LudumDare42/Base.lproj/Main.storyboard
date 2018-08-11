@@ -21,15 +21,29 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldI-Ti-EJl">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OJN-KA-cAX">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8A-qQ-26d">
+                                        <rect key="frame" x="0.0" y="0.0" width="668" height="375"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OJN-KA-cAX">
+                                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="OJN-KA-cAX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z8A-qQ-26d" secondAttribute="leading" id="0RF-iq-BQD"/>
+                                            <constraint firstAttribute="bottom" secondItem="OJN-KA-cAX" secondAttribute="bottom" id="SWo-uu-ZUh"/>
+                                            <constraint firstItem="OJN-KA-cAX" firstAttribute="centerX" secondItem="z8A-qQ-26d" secondAttribute="centerX" id="UqD-CY-MBG"/>
+                                            <constraint firstItem="OJN-KA-cAX" firstAttribute="top" secondItem="z8A-qQ-26d" secondAttribute="top" id="fp6-Kb-bXg"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OJN-KA-cAX" secondAttribute="trailing" id="q6B-fE-PGJ"/>
+                                            <constraint firstItem="OJN-KA-cAX" firstAttribute="height" secondItem="z8A-qQ-26d" secondAttribute="height" id="xes-qJ-YAN"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OJN-KA-cAX" secondAttribute="bottom" id="5oV-yg-aQb"/>
-                                    <constraint firstItem="OJN-KA-cAX" firstAttribute="leading" secondItem="ldI-Ti-EJl" secondAttribute="leading" id="DrX-g7-DBS"/>
-                                    <constraint firstItem="OJN-KA-cAX" firstAttribute="top" secondItem="ldI-Ti-EJl" secondAttribute="top" id="IlP-x0-beL"/>
-                                    <constraint firstAttribute="trailing" secondItem="OJN-KA-cAX" secondAttribute="trailing" id="uWV-os-drH"/>
+                                    <constraint firstItem="z8A-qQ-26d" firstAttribute="leading" secondItem="ldI-Ti-EJl" secondAttribute="leading" id="DeF-wy-qis"/>
+                                    <constraint firstAttribute="trailing" secondItem="z8A-qQ-26d" secondAttribute="trailing" id="MNt-jr-CM2"/>
+                                    <constraint firstAttribute="bottom" secondItem="z8A-qQ-26d" secondAttribute="bottom" id="Rwk-R9-lCo"/>
+                                    <constraint firstItem="z8A-qQ-26d" firstAttribute="top" secondItem="ldI-Ti-EJl" secondAttribute="top" id="T2h-7r-AvI"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -37,10 +51,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ldI-Ti-EJl" secondAttribute="trailing" id="20O-V1-ILz"/>
                             <constraint firstAttribute="bottom" secondItem="ldI-Ti-EJl" secondAttribute="bottom" id="Kfa-T3-DUW"/>
-                            <constraint firstItem="OJN-KA-cAX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="RDR-5H-48m"/>
+                            <constraint firstItem="OJN-KA-cAX" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" priority="750" id="O4M-hb-WAv"/>
+                            <constraint firstItem="z8A-qQ-26d" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Rpz-qz-9ux"/>
                             <constraint firstItem="ldI-Ti-EJl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SOJ-s2-Efw"/>
+                            <constraint firstItem="z8A-qQ-26d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="250" id="oK5-qE-MUO"/>
                             <constraint firstItem="ldI-Ti-EJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oX1-Yo-T87"/>
-                            <constraint firstItem="OJN-KA-cAX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="750" id="zwi-PF-Psw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

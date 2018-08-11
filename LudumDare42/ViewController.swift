@@ -8,24 +8,72 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GameMasterViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
+    var peopleViews: [String: PersonView] = [:]
+    
+    let gameMaster = GameMaster()
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.configureView()
+        self.gameMaster.viewDelegate = self
+        self.gameMaster.newGame()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.gameMaster.startGame()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        self.gameMaster.stopGame()
+    }
+    
+    // MARK: - View Configuration
 
     func configureView() {
-        for _ in 0..<15 {
-            let personView = PersonView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-            let minWidthConstraint = NSLayoutConstraint(item: personView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: PersonView.minWidth)
-            personView.addConstraint(minWidthConstraint)
-            self.stackView.addArrangedSubview(personView)
+    }
+    
+    // MARK: - Game Master View Delegate
+    
+    func resetGameBoard() {
+        self.stackView.arrangedSubviews.forEach { (view) in
+            self.stackView.removeArrangedSubview(view)
+        }
+        self.peopleViews.removeAll()
+    }
+    
+    func add(person: Person) {
+        let existingView = peopleViews[person.id]
+        guard existingView == nil else { return }
+        
+        let personView = PersonView(frame: .zero)
+        personView.personID = person.id
+        personView.delegate = self.gameMaster
+        
+        self.peopleViews[person.id] = personView
+        self.stackView.addArrangedSubview(personView)
+    }
+    
+    func update(person: Person) {
+        if let view = peopleViews[person.id] {
+            view.updateFor(person: person)
+        }
+    }
+    
+    func remove(person: Person) {
+        if let personView = peopleViews[person.id] {
+            self.stackView.removeArrangedSubview(personView)
+            self.peopleViews.removeValue(forKey: person.id)
         }
     }
 }
-

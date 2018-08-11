@@ -17,6 +17,9 @@
 		D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */; };
 		D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4A211E5D88006CD833 /* Assets.xcassets */; };
 		D8687C4E211E5D88006CD833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */; };
+		D8AE3D48211F2A6E00946F24 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE3D47211F2A6E00946F24 /* Person.swift */; };
+		D8AE3D4A211F349900946F24 /* Costs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE3D49211F349900946F24 /* Costs.swift */; };
+		D8AE3D4C211F3A4200946F24 /* GameMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE3D4B211F3A4200946F24 /* GameMaster.swift */; };
 		D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901CC211F17F400422F4B /* PersonInactiveView.swift */; };
 		D8B901CF211F1B3E00422F4B /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B901CE211F1B3E00422F4B /* PersonView.xib */; };
 		D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901D0211F1D2F00422F4B /* PersonView.swift */; };
@@ -35,6 +38,9 @@
 		D8687C4A211E5D88006CD833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8687C4D211E5D88006CD833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8687C4F211E5D88006CD833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8AE3D47211F2A6E00946F24 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		D8AE3D49211F349900946F24 /* Costs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Costs.swift; sourceTree = "<group>"; };
+		D8AE3D4B211F3A4200946F24 /* GameMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMaster.swift; sourceTree = "<group>"; };
 		D8B901CC211F17F400422F4B /* PersonInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInactiveView.swift; sourceTree = "<group>"; };
 		D8B901CE211F1B3E00422F4B /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
 		D8B901D0211F1D2F00422F4B /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
@@ -86,9 +92,20 @@
 				D8687C4A211E5D88006CD833 /* Assets.xcassets */,
 				D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */,
 				D8687C4F211E5D88006CD833 /* Info.plist */,
+				D8AE3D46211F2A5B00946F24 /* Models */,
 				D83D58AC211E74BA00CFC325 /* Views */,
 			);
 			path = LudumDare42;
+			sourceTree = "<group>";
+		};
+		D8AE3D46211F2A5B00946F24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8AE3D4B211F3A4200946F24 /* GameMaster.swift */,
+				D8AE3D47211F2A6E00946F24 /* Person.swift */,
+				D8AE3D49211F349900946F24 /* Costs.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D8B901D2211F1D3500422F4B /* Interface */ = {
@@ -184,9 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8AE3D48211F2A6E00946F24 /* Person.swift in Sources */,
 				D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */,
+				D8AE3D4A211F349900946F24 /* Costs.swift in Sources */,
 				D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */,
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
+				D8AE3D4C211F3A4200946F24 /* GameMaster.swift in Sources */,
 				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
 				D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */,
 				D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */,
