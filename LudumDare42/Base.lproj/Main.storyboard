@@ -40,10 +40,20 @@
                                     <constraint firstAttribute="width" secondItem="hHL-DW-xL0" secondAttribute="height" multiplier="1.42" id="MzI-mg-83Q"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyh-FW-zVG" customClass="PhotoView" customModule="LudumDare42" customModuleProvider="target">
+                                <rect key="frame" x="33" y="365" width="88" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zyh-FW-zVG" secondAttribute="height" multiplier="1:1" id="Wzx-7b-L4n"/>
+                                    <constraint firstAttribute="width" constant="88" id="p8X-h5-t0p"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dAq-kU-4Zj" firstAttribute="leading" secondItem="zyh-FW-zVG" secondAttribute="trailing" constant="15.5" id="P1a-4M-gJz"/>
                             <constraint firstItem="hHL-DW-xL0" firstAttribute="top" secondItem="dAq-kU-4Zj" secondAttribute="bottom" constant="40" id="RsL-lB-xzx"/>
+                            <constraint firstItem="hHL-DW-xL0" firstAttribute="top" secondItem="zyh-FW-zVG" secondAttribute="bottom" constant="19.5" id="Rwl-p6-aWg"/>
                             <constraint firstItem="dAq-kU-4Zj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eGM-s7-Cac"/>
                             <constraint firstItem="dAq-kU-4Zj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nff-dd-8K1"/>
                             <constraint firstItem="hHL-DW-xL0" firstAttribute="centerX" secondItem="dAq-kU-4Zj" secondAttribute="centerX" id="pGm-cG-5Ot"/>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D83D58AE211E74DA00CFC325 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58AD211E74DA00CFC325 /* PhoneView.swift */; };
 		D83D58B0211E7A2200CFC325 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58AF211E7A2200CFC325 /* EmailView.swift */; };
+		D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58B1211E7D1C00CFC325 /* PhotoView.swift */; };
 		D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C40211E5D87006CD833 /* AppDelegate.swift */; };
 		D8687C43211E5D87006CD833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C42211E5D87006CD833 /* ViewController.swift */; };
 		D8687C46211E5D87006CD833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C44211E5D87006CD833 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		D83D58AD211E74DA00CFC325 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		D83D58AF211E7A2200CFC325 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		D83D58B1211E7D1C00CFC325 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D8687C3D211E5D87006CD833 /* LudumDare42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LudumDare42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8687C40211E5D87006CD833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8687C42211E5D87006CD833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				D83D58AD211E74DA00CFC325 /* PhoneView.swift */,
 				D83D58AF211E7A2200CFC325 /* EmailView.swift */,
+				D83D58B1211E7D1C00CFC325 /* PhotoView.swift */,
 			);
 			name = Views;
 			path = "New Group";
@@ -156,6 +159,7 @@
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
 				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
 				D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */,
+				D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */,
 				D83D58AE211E74DA00CFC325 /* PhoneView.swift in Sources */,
 				D83D58B0211E7A2200CFC325 /* EmailView.swift in Sources */,
 			);
