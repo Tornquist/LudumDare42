@@ -69,8 +69,15 @@ class PersonView: UIView {
         let centerX = (self.phoneView.frame.minX + self.phoneView.frame.maxX) / 2
         let topY = self.phoneView.frame.minY
         
-        let minFinish: CGFloat = 0
-        let maxFinish: CGFloat = self.frame.maxX
+        var minFinish: CGFloat = 0
+        var maxFinish: CGFloat = self.frame.maxX
+        
+        let minSpread = PersonView.minWidth * 3
+        if self.frame.width < minSpread {
+            let extra = minSpread - self.frame.width
+            minFinish = minFinish - extra / 2
+            maxFinish = maxFinish + extra / 2
+        }
         
         // 0.9 -> 1.1
         let frameAdjustment = 1 + CGFloat(Int(arc4random_uniform(10)) - 5) / 50

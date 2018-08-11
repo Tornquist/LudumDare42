@@ -39,15 +39,16 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func startGame() {
         gameTimer?.invalidate()   // just in case you had existing `Timer`, `invalidate` it before we lose our reference to it
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
-            self?.gameStep()
-        }
+        
+        gameTimer = Timer(timeInterval: 0.5, target: self, selector: #selector(gameStep), userInfo: nil, repeats: true)
+        RunLoop.main.add(gameTimer!, forMode: RunLoopMode.commonModes)
     }
     
     func stopGame() {
         gameTimer?.invalidate()
     }
     
+    @objc
     func gameStep() {
         self.generatePeopleAsNeeded()
         self.people.forEach({ $0.gameStep() })
@@ -65,7 +66,6 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         let newPerson = Person()
         newPerson.delegate = self
         people.append(newPerson)
-        
         self.viewDelegate?.add(person: newPerson)
     }
     
