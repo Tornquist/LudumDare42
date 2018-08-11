@@ -79,5 +79,4 @@ class PhoneView: UIView {
         memoryColor.setFill()
         memoryIndicatorPath.fill()
     }
-
 }

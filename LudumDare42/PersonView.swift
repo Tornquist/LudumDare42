@@ -57,6 +57,44 @@ class PersonView: UIView {
         self.phoneView?.backgroundColor = .clear
     }
     
+    func showEmail() {
+        self.showParticle(for: .email)
+    }
+    
+    func showPhoto() {
+        self.showParticle(for: .photo)
+    }
+    
+    func showParticle(for type: ParticleType) {
+        let centerX = (self.phoneView.frame.minX + self.phoneView.frame.maxX) / 2
+        let topY = self.phoneView.frame.minY
+        
+        let minFinish: CGFloat = 0
+        let maxFinish: CGFloat = self.frame.maxX
+        
+        // 0.9 -> 1.1
+        let frameAdjustment = 1 + CGFloat(Int(arc4random_uniform(10)) - 5) / 50
+        let emailWidth = self.phoneView.frame.width * frameAdjustment
+        let aspectRatio = type == .email ? EmailView.aspectRatio : PhotoView.aspectRatio
+        let emailHeight = emailWidth / aspectRatio
+        
+        let exitPercent = CGFloat(arc4random_uniform(10)) / 10
+        let exitPosition = minFinish + (maxFinish - minFinish) * exitPercent
+        
+        let startFrame = CGRect(x: centerX - emailWidth/2, y: topY - emailHeight/2, width: emailWidth, height: emailHeight)
+        let endFrame = CGRect(x: exitPosition - emailWidth/2, y: -emailHeight*2, width: emailWidth*0.8, height: emailHeight*0.8)
+        
+        let particleView: UIView = type == .email ? EmailView(frame: startFrame) : PhotoView(frame: startFrame)
+        
+        self.addSubview(particleView)
+        
+        UIView.animate(withDuration: 2, animations: {
+            particleView.frame = endFrame
+        }) { (done) in
+            particleView.removeFromSuperview()
+        }
+    }
+    
     func updateFor(person: Person) {
         guard person.alive else {
             self.showDeath(for: person)

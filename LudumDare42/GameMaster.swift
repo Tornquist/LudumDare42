@@ -9,7 +9,8 @@
 import Foundation
 
 protocol GameMasterDelegate: class {
-    func updateNeededFor(person: Person)
+    func photoTaken(by person: Person)
+    func emailSent(by person: Person)
     func personDied(_ person: Person)
 }
 
@@ -17,6 +18,8 @@ protocol GameMasterViewDelegate: class {
     func resetGameBoard()
     func add(person: Person)
     func update(person: Person)
+    func showEmailFor(person: Person)
+    func showPhotoFor(person: Person)
     func remove(person: Person)
 }
 
@@ -68,8 +71,12 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     // MARK: - Game Master
     
-    func updateNeededFor(person: Person) {
-        self.viewDelegate?.update(person: person)
+    func emailSent(by person: Person) {
+        self.viewDelegate?.showEmailFor(person: person)
+    }
+    
+    func photoTaken(by person: Person) {
+        self.viewDelegate?.showPhotoFor(person: person)
     }
     
     func personDied(_ person: Person) {

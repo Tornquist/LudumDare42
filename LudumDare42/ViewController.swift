@@ -64,6 +64,20 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         self.stackView.addArrangedSubview(personView)
     }
     
+    func showEmailFor(person: Person) {
+        if let view = peopleViews[person.id] {
+            view.showEmail()
+            view.updateFor(person: person)
+        }
+    }
+    
+    func showPhotoFor(person: Person) {
+        if let view = peopleViews[person.id] {
+            view.showPhoto()
+            view.updateFor(person: person)
+        }
+    }
+    
     func update(person: Person) {
         if let view = peopleViews[person.id] {
             view.updateFor(person: person)

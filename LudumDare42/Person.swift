@@ -36,9 +36,8 @@ class Person {
         let takePhoto = random < photoRate
         let sendEmail = random < emailRate
         
-        var updateNeeded = false
-        if (takePhoto) { memory += Costs.photo.rawValue; updateNeeded = true }
-        if (sendEmail) { memory += Costs.email.rawValue; updateNeeded = true }
+        if (takePhoto) { memory += Costs.photo.rawValue }
+        if (sendEmail) { memory += Costs.email.rawValue }
         
         if memory > 100 {
             self.memory = 100
@@ -46,8 +45,7 @@ class Person {
             self.delegate?.personDied(self)
         }
         
-        if updateNeeded {
-            self.delegate?.updateNeededFor(person: self)
-        }
+        if (takePhoto) { self.delegate?.photoTaken(by: self) }
+        if (sendEmail) { self.delegate?.emailSent(by: self) }
     }
 }
