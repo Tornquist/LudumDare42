@@ -49,10 +49,10 @@ class Person {
         if (sendEmail) { self.delegate?.emailSent(by: self) }
     }
     
-    func backupData() {
+    func backupData(_ amount: Int) {
         guard alive else { return }
         
-        memory += Costs.backingUp.rawValue
+        memory -= amount
         memory = max(memory, 0)
     }
 }

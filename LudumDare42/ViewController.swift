@@ -121,17 +121,29 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         }
     }
     
+    func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool) {
+        let reputationPercent = Float(reputation) / 100.0
+        self.reputationView.setProgress(reputationPercent, animated: true)
+        let reputationColor: UIColor = reputationPercent > 0.66 ? .green : (reputationPercent > 0.33 ? .yellow : .red)
+        self.reputationView.progressTintColor = reputationColor
+        
+        self.moneyValue.text = "$\(money)"
+        self.priceLabel.text = "$\(price)"
+        
+        self.upgradeSpeedButton.isEnabled = upgradeEnabled
+    }
+    
     // MARK: - Events
     
     @IBAction func priceIncreasePressed(_ sender: UIButton) {
-        print("Increase price pressed")
+        self.gameMaster.increasePrice()
     }
     
     @IBAction func priceDecresePressed(_ sender: UIButton) {
-        print("Decrease price pressed")
+        self.gameMaster.decreasePrice()
     }
     
     @IBAction func upgradeSpeedPressed(_ sender: UIButton) {
-        print("upgrade speed pressed")
+        self.gameMaster.upgradeSpeed()
     }
 }
