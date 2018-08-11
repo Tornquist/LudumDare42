@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83D58AE211E74DA00CFC325 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58AD211E74DA00CFC325 /* PhoneView.swift */; };
 		D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C40211E5D87006CD833 /* AppDelegate.swift */; };
 		D8687C43211E5D87006CD833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C42211E5D87006CD833 /* ViewController.swift */; };
 		D8687C46211E5D87006CD833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C44211E5D87006CD833 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D83D58AD211E74DA00CFC325 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		D8687C3D211E5D87006CD833 /* LudumDare42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LudumDare42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8687C40211E5D87006CD833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8687C42211E5D87006CD833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D83D58AC211E74BA00CFC325 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D83D58AD211E74DA00CFC325 /* PhoneView.swift */,
+			);
+			name = Views;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		D8687C34211E5D87006CD833 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +67,14 @@
 		D8687C3F211E5D87006CD833 /* LudumDare42 */ = {
 			isa = PBXGroup;
 			children = (
+				D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */,
 				D8687C40211E5D87006CD833 /* AppDelegate.swift */,
 				D8687C42211E5D87006CD833 /* ViewController.swift */,
 				D8687C44211E5D87006CD833 /* Main.storyboard */,
 				D8687C4A211E5D88006CD833 /* Assets.xcassets */,
 				D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */,
 				D8687C4F211E5D88006CD833 /* Info.plist */,
-				D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */,
+				D83D58AC211E74BA00CFC325 /* Views */,
 			);
 			path = LudumDare42;
 			sourceTree = "<group>";
@@ -141,6 +153,7 @@
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
 				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
 				D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */,
+				D83D58AE211E74DA00CFC325 /* PhoneView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
