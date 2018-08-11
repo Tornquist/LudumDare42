@@ -56,6 +56,8 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     // MARK: - View Configuration
 
     func configureView() {
+        self.view.backgroundColor = .black
+        
         self.reputationLabel.text = NSLocalizedString("Reputation", comment: "")
         self.reputationLabel.textColor = .white
         self.reputationView.trackTintColor = .clear
@@ -111,14 +113,12 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     func showEmailFor(person: Person) {
         if let view = peopleViews[person.id] {
             view.showEmail()
-            view.updateFor(person: person)
         }
     }
     
     func showPhotoFor(person: Person) {
         if let view = peopleViews[person.id] {
             view.showPhoto()
-            view.updateFor(person: person)
         }
     }
     

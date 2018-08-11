@@ -35,6 +35,12 @@ class Person {
     func gameStep() {
         guard alive else { return }
         
+        self.schedule.incrementTime()
+        guard self.schedule.awake else {
+            self.delegate?.updateView(for: self)
+            return
+        }
+        
         let random = Float(arc4random_uniform(100)) / 100
         let takePhoto = random < photoRate
         let sendEmail = random < emailRate
@@ -50,6 +56,8 @@ class Person {
         
         if (takePhoto) { self.delegate?.photoTaken(by: self) }
         if (sendEmail) { self.delegate?.emailSent(by: self) }
+        
+        self.delegate?.updateView(for: self)
     }
     
     func backupData(_ amount: Int) {

@@ -12,6 +12,7 @@ protocol GameMasterDelegate: class {
     func photoTaken(by person: Person)
     func emailSent(by person: Person)
     func personDied(_ person: Person)
+    func updateView(for person: Person)
 }
 
 protocol GameMasterViewDelegate: class {
@@ -97,6 +98,10 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func photoTaken(by person: Person) {
         self.viewDelegate?.showPhotoFor(person: person)
+    }
+    
+    func updateView(for person: Person) {
+        self.viewDelegate?.update(person: person)
     }
     
     func personDied(_ person: Person) {
