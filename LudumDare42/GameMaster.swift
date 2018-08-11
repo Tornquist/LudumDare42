@@ -82,7 +82,6 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     func gameStep() {
         self.generatePeopleAsNeeded()
         self.people.forEach { $0.gameStep() }
-        print(Date())
     }
     
     func generatePeopleAsNeeded() {

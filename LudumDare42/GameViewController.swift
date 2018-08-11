@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  LudumDare42
 //
 //  Created by Nathan Tornquist on 8/10/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, GameMasterViewDelegate {
+class GameViewController: UIViewController, GameMasterViewDelegate {
     // Views
     
     @IBOutlet weak var scrollView: UIScrollView!

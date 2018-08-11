@@ -12,7 +12,7 @@
 		D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58B1211E7D1C00CFC325 /* PhotoView.swift */; };
 		D83D58B4211F13EA00CFC325 /* PersonActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */; };
 		D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C40211E5D87006CD833 /* AppDelegate.swift */; };
-		D8687C43211E5D87006CD833 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C42211E5D87006CD833 /* ViewController.swift */; };
+		D8687C43211E5D87006CD833 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8687C42211E5D87006CD833 /* GameViewController.swift */; };
 		D8687C46211E5D87006CD833 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C44211E5D87006CD833 /* Main.storyboard */; };
 		D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */; };
 		D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4A211E5D88006CD833 /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonActiveView.swift; sourceTree = "<group>"; };
 		D8687C3D211E5D87006CD833 /* LudumDare42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LudumDare42.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8687C40211E5D87006CD833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8687C42211E5D87006CD833 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8687C42211E5D87006CD833 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D8687C45211E5D87006CD833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8687C48211E5D87006CD833 /* LudumDare42.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LudumDare42.xcdatamodel; sourceTree = "<group>"; };
 		D8687C4A211E5D88006CD833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D8687C44211E5D87006CD833 /* Main.storyboard */,
-				D8687C42211E5D87006CD833 /* ViewController.swift */,
+				D8687C42211E5D87006CD833 /* GameViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */,
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
 				D8AE3D4C211F3A4200946F24 /* GameMaster.swift in Sources */,
-				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
+				D8687C43211E5D87006CD833 /* GameViewController.swift in Sources */,
 				D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */,
 				D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */,
 				D8AE3D53211F4B8400946F24 /* ParticleType.swift in Sources */,
