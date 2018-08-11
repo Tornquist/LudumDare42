@@ -17,6 +17,7 @@
 		D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */; };
 		D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4A211E5D88006CD833 /* Assets.xcassets */; };
 		D8687C4E211E5D88006CD833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */; };
+		D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901CC211F17F400422F4B /* PersonInactiveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D8687C4A211E5D88006CD833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8687C4D211E5D88006CD833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8687C4F211E5D88006CD833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B901CC211F17F400422F4B /* PersonInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInactiveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 				D83D58AF211E7A2200CFC325 /* EmailView.swift */,
 				D83D58B1211E7D1C00CFC325 /* PhotoView.swift */,
 				D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */,
+				D8B901CC211F17F400422F4B /* PersonInactiveView.swift */,
 			);
 			name = Views;
 			path = "New Group";
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */,
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
 				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
 				D8687C41211E5D87006CD833 /* AppDelegate.swift in Sources */,

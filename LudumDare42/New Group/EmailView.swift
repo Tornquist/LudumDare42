@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable
 class EmailView: UIView {
+    static let aspectRatio: CGFloat = 1.42
+    
     // Color Declarations
     @IBInspectable var letterBorderColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
     @IBInspectable var letterFillColor = UIColor(red: 0.116, green: 0.370, blue: 0.892, alpha: 0.523)

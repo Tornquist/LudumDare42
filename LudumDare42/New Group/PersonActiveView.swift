@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable
 class PersonActiveView: UIView {
+    static let aspectRatio: CGFloat = 0.6132
+    
     // Variables
     @IBInspectable var personColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
     @IBInspectable var playerAnimation: CGFloat = 1

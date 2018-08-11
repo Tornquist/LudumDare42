@@ -61,16 +61,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDg-xP-7LE" customClass="PersonInactiveView" customModule="LudumDare42" customModuleProvider="target">
+                                <rect key="frame" x="119" y="107" width="120" height="62"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="KM8-cA-Tdp"/>
+                                    <constraint firstAttribute="width" secondItem="QDg-xP-7LE" secondAttribute="height" multiplier="1.935" id="vno-BV-3Jd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ocb-8M-egU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Vh-Gf-7FJ"/>
+                            <constraint firstItem="QDg-xP-7LE" firstAttribute="leading" secondItem="Ocb-8M-egU" secondAttribute="trailing" constant="27" id="4g2-lR-wqK"/>
                             <constraint firstItem="dAq-kU-4Zj" firstAttribute="leading" secondItem="zyh-FW-zVG" secondAttribute="trailing" constant="15.5" id="P1a-4M-gJz"/>
                             <constraint firstItem="hHL-DW-xL0" firstAttribute="top" secondItem="dAq-kU-4Zj" secondAttribute="bottom" constant="40" id="RsL-lB-xzx"/>
                             <constraint firstItem="hHL-DW-xL0" firstAttribute="top" secondItem="zyh-FW-zVG" secondAttribute="bottom" constant="19.5" id="Rwl-p6-aWg"/>
                             <constraint firstItem="dAq-kU-4Zj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eGM-s7-Cac"/>
                             <constraint firstItem="dAq-kU-4Zj" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nff-dd-8K1"/>
                             <constraint firstItem="hHL-DW-xL0" firstAttribute="centerX" secondItem="dAq-kU-4Zj" secondAttribute="centerX" id="pGm-cG-5Ot"/>
+                            <constraint firstItem="dAq-kU-4Zj" firstAttribute="top" secondItem="QDg-xP-7LE" secondAttribute="bottom" constant="85.5" id="trj-Db-c4g"/>
                             <constraint firstItem="Ocb-8M-egU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="w7w-Qb-syt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

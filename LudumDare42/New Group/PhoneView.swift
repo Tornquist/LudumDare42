@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable
 class PhoneView: UIView {
+    static let aspectRatio: CGFloat = 0.5714
+    
     // Color Declarations
     @IBInspectable var screenColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
     @IBInspectable var phoneColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)

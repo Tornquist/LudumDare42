@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable
 class PhotoView: UIView {
+    static let aspectRatio: CGFloat = 1
+    
     // Color Declarations
     let photoBackground = UIColor(red: 0.464, green: 0.754, blue: 0.948, alpha: 1.000)
     let photoForeground = UIColor(red: 0.320, green: 0.800, blue: 0.626, alpha: 1.000)
