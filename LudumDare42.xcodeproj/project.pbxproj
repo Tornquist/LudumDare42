@@ -89,11 +89,10 @@
 			children = (
 				D8687C47211E5D87006CD833 /* LudumDare42.xcdatamodeld */,
 				D8687C40211E5D87006CD833 /* AppDelegate.swift */,
-				D8687C42211E5D87006CD833 /* ViewController.swift */,
-				D8687C44211E5D87006CD833 /* Main.storyboard */,
 				D8687C4A211E5D88006CD833 /* Assets.xcassets */,
 				D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */,
 				D8687C4F211E5D88006CD833 /* Info.plist */,
+				D8F26408211F791300867BEF /* View Controllers */,
 				D8AE3D46211F2A5B00946F24 /* Models */,
 				D83D58AC211E74BA00CFC325 /* Views */,
 			);
@@ -138,6 +137,15 @@
 				D8B901CC211F17F400422F4B /* PersonInactiveView.swift */,
 			);
 			name = Supporting;
+			sourceTree = "<group>";
+		};
+		D8F26408211F791300867BEF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8687C44211E5D87006CD833 /* Main.storyboard */,
+				D8687C42211E5D87006CD833 /* ViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
