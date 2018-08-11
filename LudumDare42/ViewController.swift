@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController, GameMasterViewDelegate {
-
     // Views
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -24,6 +23,12 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     @IBOutlet weak var increasePriceButton: UIButton!
     @IBOutlet weak var decreasePriceButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    @IBOutlet weak var gameOverEffectView: UIVisualEffectView!
+    @IBOutlet weak var gameOverContentView: UIView!
+    @IBOutlet weak var gameOverTitle: UILabel!
+    @IBOutlet weak var gameOverMessage: UILabel!
+    @IBOutlet weak var gameOverButton: UIButton!
     
     // Other
     
@@ -74,6 +79,12 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         self.upgradeSpeedButton.setTitleColor(.gray, for: .disabled)
         self.upgradeSpeedButton.setTitle(NSLocalizedString("Upgrade Speed", comment: ""), for: .normal)
         self.upgradeSpeedButton.isEnabled = false
+        
+        self.gameOverTitle.text = NSLocalizedString("Game Over", comment: "")
+        self.gameOverMessage.text = "You lost."
+        
+        self.gameOverEffectView.isHidden = true
+        self.gameOverContentView.isHidden = true
     }
     
     // MARK: - Game Master View Delegate
@@ -81,8 +92,16 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     func resetGameBoard() {
         self.stackView.arrangedSubviews.forEach { (view) in
             self.stackView.removeArrangedSubview(view)
+            view.removeFromSuperview()
+        }
+        self.backgroundViews.forEach { (key, value) in
+            value.removeFromSuperview()
         }
         self.peopleViews.removeAll()
+        self.backgroundViews.removeAll()
+        
+        self.gameOverEffectView.isHidden = true
+        self.gameOverContentView.isHidden = true
     }
     
     func add(person: Person) {
@@ -150,6 +169,11 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         self.upgradeSpeedButton.isEnabled = upgradeEnabled
     }
     
+    func showGameOver() {
+        self.gameOverEffectView.isHidden = false
+        self.gameOverContentView.isHidden = false
+    }
+    
     // MARK: - Events
     
     @IBAction func priceIncreasePressed(_ sender: UIButton) {
@@ -162,5 +186,10 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     
     @IBAction func upgradeSpeedPressed(_ sender: UIButton) {
         self.gameMaster.upgradeSpeed()
+    }
+    
+    @IBAction func retryPressed(_ sender: UIButton) {
+        self.gameMaster.newGame()
+        self.gameMaster.startGame()
     }
 }

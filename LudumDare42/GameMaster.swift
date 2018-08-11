@@ -24,6 +24,7 @@ protocol GameMasterViewDelegate: class {
     func showPhotoFor(person: Person)
     func remove(person: Person)
     func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool)
+    func showGameOver()
 }
 
 class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
@@ -116,6 +117,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         self.viewDelegate?.update(person: person)
         self.reputation -= self.reputationCost
         self.sendNavUpdate()
+        self.checkGameState()
     }
     
     // MARK: - Person View Events Delegate
@@ -184,6 +186,15 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         let priceBonus = (inversePricePercent - 0.5) / 0.5 * multiplier
         
         self.birthRate = baseBirthRate + reputationBonus + priceBonus
+    }
+    
+    func checkGameState() {
+        if self.reputation > 0 {
+            return
+        }
+        
+        self.stopGame()
+        self.viewDelegate?.showGameOver()
     }
     
     // MARK: - Pricing
