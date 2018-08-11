@@ -18,6 +18,8 @@
 		D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4A211E5D88006CD833 /* Assets.xcassets */; };
 		D8687C4E211E5D88006CD833 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8687C4C211E5D88006CD833 /* LaunchScreen.storyboard */; };
 		D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901CC211F17F400422F4B /* PersonInactiveView.swift */; };
+		D8B901CF211F1B3E00422F4B /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B901CE211F1B3E00422F4B /* PersonView.xib */; };
+		D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901D0211F1D2F00422F4B /* PersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D8687C4D211E5D88006CD833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8687C4F211E5D88006CD833 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B901CC211F17F400422F4B /* PersonInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInactiveView.swift; sourceTree = "<group>"; };
+		D8B901CE211F1B3E00422F4B /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
+		D8B901D0211F1D2F00422F4B /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,14 +54,10 @@
 		D83D58AC211E74BA00CFC325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D83D58AD211E74DA00CFC325 /* PhoneView.swift */,
-				D83D58AF211E7A2200CFC325 /* EmailView.swift */,
-				D83D58B1211E7D1C00CFC325 /* PhotoView.swift */,
-				D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */,
-				D8B901CC211F17F400422F4B /* PersonInactiveView.swift */,
+				D8B901D2211F1D3500422F4B /* Interface */,
+				D8B901D3211F1D4000422F4B /* Supporting */,
 			);
 			name = Views;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D8687C34211E5D87006CD833 = {
@@ -89,6 +89,27 @@
 				D83D58AC211E74BA00CFC325 /* Views */,
 			);
 			path = LudumDare42;
+			sourceTree = "<group>";
+		};
+		D8B901D2211F1D3500422F4B /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				D8B901CE211F1B3E00422F4B /* PersonView.xib */,
+				D8B901D0211F1D2F00422F4B /* PersonView.swift */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		D8B901D3211F1D4000422F4B /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				D83D58AD211E74DA00CFC325 /* PhoneView.swift */,
+				D83D58AF211E7A2200CFC325 /* EmailView.swift */,
+				D83D58B1211E7D1C00CFC325 /* PhotoView.swift */,
+				D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */,
+				D8B901CC211F17F400422F4B /* PersonInactiveView.swift */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8687C4E211E5D88006CD833 /* LaunchScreen.storyboard in Resources */,
+				D8B901CF211F1B3E00422F4B /* PersonView.xib in Resources */,
 				D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */,
 				D8687C46211E5D87006CD833 /* Main.storyboard in Resources */,
 			);
@@ -162,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */,
 				D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */,
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,
 				D8687C43211E5D87006CD833 /* ViewController.swift in Sources */,
@@ -323,7 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathantornquist.LudumDare42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -341,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathantornquist.LudumDare42;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
