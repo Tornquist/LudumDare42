@@ -28,15 +28,15 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     var gameTimer: Timer?
     
     var people: [Person] = []
-    var birthRate: Float = 0.02
+    var birthRate: Float = 0.2
     
-    var reputation: Int = 100
+    var reputation: Int = 50 { didSet { self.updateBirthRate() }}
     var money: Int = 0
-    var price: Int = 20
+    var price: Int = 20 { didSet { self.updateBirthRate() }}
     var upgradePrice: Int = 80
     var backupRate: Int = 3
     
-    let maxPrice: Int = 500
+    let maxPrice: Int = 150
     let minPrice: Int = 5
     let reputationCost: Int = 5
     
@@ -47,7 +47,8 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         self.people.removeAll()
         self.newPerson()
         
-        self.reputation = 100
+        self.birthRate = 0.2
+        self.reputation = 50
         self.money = 0
         self.price = 20
         self.upgradePrice = 80
@@ -100,6 +101,8 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func personDied(_ person: Person) {
         self.viewDelegate?.update(person: person)
+        self.reputation -= self.reputationCost
+        self.sendNavUpdate()
     }
     
     // MARK: - Person View Events Delegate
@@ -118,8 +121,6 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
                 return person.id == testPerson.id
             }) {
                 self.people.remove(at: personIndex)
-                self.reputation -= self.reputationCost
-                self.sendNavUpdate()
             }
         }
     }
@@ -136,6 +137,26 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func sendNavUpdate() {
         self.viewDelegate?.refreshNav(reputation: self.reputation, money: self.money, price: self.price, upgradeEnabled: self.canUpgrade())
+    }
+    
+    func updateBirthRate() {
+        // Starting BirthRate = 0.2
+        
+        let baseBirthRate: Float = 0.2
+        
+        // 0.04 per reputation tier of 20 (ranges from 0 to 100)
+        let reputationBonus: Float = Float(Int(self.reputation / 20)) * 0.04
+        
+        // Below median gives a max of 0.2 above takes up to 0.1 away
+        let pricePercent = Float(self.price - self.minPrice) / Float(self.maxPrice - self.minPrice)
+        let inversePricePercent = 1 - pricePercent
+        
+        let belowMedian = Float(self.price) < Float(self.maxPrice) / 2.0
+        let multiplier: Float = belowMedian ? 0.2 : 0.1
+        
+        let priceBonus = (inversePricePercent - 0.5) / 0.5 * multiplier
+        
+        self.birthRate = baseBirthRate + reputationBonus + priceBonus
     }
     
     // MARK: - Pricing
