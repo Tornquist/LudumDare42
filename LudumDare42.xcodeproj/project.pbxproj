@@ -33,7 +33,7 @@
 		D83D58AF211E7A2200CFC325 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		D83D58B1211E7D1C00CFC325 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D83D58B3211F13EA00CFC325 /* PersonActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonActiveView.swift; sourceTree = "<group>"; };
-		D8687C3D211E5D87006CD833 /* LudumDare42.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LudumDare42.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8687C3D211E5D87006CD833 /* SpaceIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8687C40211E5D87006CD833 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8687C42211E5D87006CD833 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D8687C45211E5D87006CD833 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		D8687C3E211E5D87006CD833 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8687C3D211E5D87006CD833 /* LudumDare42.app */,
+				D8687C3D211E5D87006CD833 /* SpaceIO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 			);
 			name = LudumDare42;
 			productName = LudumDare42;
-			productReference = D8687C3D211E5D87006CD833 /* LudumDare42.app */;
+			productReference = D8687C3D211E5D87006CD833 /* SpaceIO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -392,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathantornquist.LudumDare42;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpaceIO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -410,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathantornquist.LudumDare42;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SpaceIO;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
