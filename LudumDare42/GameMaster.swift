@@ -41,7 +41,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     let maxPrice: Int = 150
     let minPrice: Int = 5
     let reputationIncrease: Int = 1
-    let reputationCost: Int = 5
+    let reputationCost: Int = 6
     let maxReputation: Int = 100
     
     weak var viewDelegate: GameMasterViewDelegate!
@@ -195,8 +195,8 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     func upgradeSpeed() {
         if self.canUpgrade() {
             self.money = self.money - self.upgradePrice
-            self.upgradePrice = Int(Double(self.upgradePrice) * 2)
-            self.backupRate = Int(Double(self.backupRate) * 1.4)
+            self.upgradePrice = Int(Double(self.upgradePrice) * 2.1)
+            self.backupRate = Int(Double(self.backupRate) * 1.35)
         }
         self.sendNavUpdate()
     }
