@@ -48,4 +48,11 @@ class Person {
         if (takePhoto) { self.delegate?.photoTaken(by: self) }
         if (sendEmail) { self.delegate?.emailSent(by: self) }
     }
+    
+    func backupData() {
+        guard alive else { return }
+        
+        memory += Costs.backingUp.rawValue
+        memory = max(memory, 0)
+    }
 }

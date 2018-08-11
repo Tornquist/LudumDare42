@@ -9,6 +9,7 @@
 import Foundation
 
 enum Costs: Int {
+    case backingUp = -3
     case email = 1
     case photo = 6
 }

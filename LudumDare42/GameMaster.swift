@@ -51,7 +51,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     @objc
     func gameStep() {
         self.generatePeopleAsNeeded()
-        self.people.forEach({ $0.gameStep() })
+        self.people.forEach { $0.gameStep() }
         print(Date())
     }
     
@@ -86,7 +86,10 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     // MARK: - Person View Events Delegate
     
     func personSelected(withID personID: String) {
-        print("Selected \(personID)")
+        if let person = self.lookupPerson(withID: personID) {
+            person.backupData()
+            self.viewDelegate?.update(person: person)
+        }
     }
     
     func deathAnimationComplete(forID personID: String) {
