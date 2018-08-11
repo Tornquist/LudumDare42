@@ -149,6 +149,14 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     }
     
     func earnReputation() {
+        let pricePercentage = Float(self.price - self.minPrice) / Float(self.maxPrice)
+        let inversePricePercentage = 1 - pricePercentage
+        let adjustedPricePercentage = Int(inversePricePercentage * 10)
+        
+        let rand = Int(arc4random_uniform(10))
+        
+        guard adjustedPricePercentage < rand else { return }
+        
         self.reputation += self.reputationIncrease
         self.reputation = min(self.reputation, self.maxReputation)
         self.sendNavUpdate()
