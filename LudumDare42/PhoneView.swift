@@ -13,12 +13,12 @@ class PhoneView: UIView {
     static let aspectRatio: CGFloat = 0.5714
     
     // Color Declarations
-    @IBInspectable var screenColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
-    @IBInspectable var phoneColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-    @IBInspectable var memoryGood = UIColor(red: 0.000, green: 1.000, blue: 0.000, alpha: 1.000)
-    @IBInspectable var memoryMedium = UIColor(red: 1.000, green: 0.998, blue: 0.000, alpha: 1.000)
-    @IBInspectable var memoryBad = UIColor(red: 1.000, green: 0.000, blue: 0.000, alpha: 1.000)
-    var memoryClear = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 0.000)
+    @IBInspectable var screenColor: UIColor = .white
+    @IBInspectable var phoneColor: UIColor = .black
+    @IBInspectable var memoryGood: UIColor = .green
+    @IBInspectable var memoryMedium: UIColor = .yellow
+    @IBInspectable var memoryBad: UIColor = .red
+    var memoryClear: UIColor = .clear
     
     // Context
     let paintCodeWidth: CGFloat = 80

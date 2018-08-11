@@ -10,11 +10,25 @@ import UIKit
 
 class ViewController: UIViewController, GameMasterViewDelegate {
 
+    // Views
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
-    var peopleViews: [String: PersonView] = [:]
+    
+    @IBOutlet weak var reputationLabel: UILabel!
+    @IBOutlet weak var reputationView: UIProgressView!
+    
+    @IBOutlet weak var moneyTitle: UILabel!
+    @IBOutlet weak var moneyValue: UILabel!
+    @IBOutlet weak var upgradeSpeedButton: UIButton!
+    @IBOutlet weak var increasePriceButton: UIButton!
+    @IBOutlet weak var decreasePriceButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    // Other
     
     let gameMaster = GameMaster()
+    var peopleViews: [String: PersonView] = [:]
     
     // MARK: - Lifecycle
     
@@ -41,6 +55,22 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     // MARK: - View Configuration
 
     func configureView() {
+        self.reputationLabel.text = NSLocalizedString("Reputation", comment: "")
+        self.reputationLabel.textColor = .white
+        self.reputationView.trackTintColor = .clear
+        
+        self.moneyTitle.text = NSLocalizedString("Money", comment: "")
+        self.moneyTitle.textColor = .white
+        self.moneyValue.text = "$0"
+        self.moneyValue.textColor = .white
+        
+        self.priceLabel.textColor = .white
+        self.priceLabel.text = "$20"
+        
+        self.upgradeSpeedButton.setTitleColor(.green, for: .normal)
+        self.upgradeSpeedButton.setTitleColor(.gray, for: .disabled)
+        self.upgradeSpeedButton.setTitle(NSLocalizedString("Upgrade Speed", comment: ""), for: .normal)
+        self.upgradeSpeedButton.isEnabled = false
     }
     
     // MARK: - Game Master View Delegate
@@ -89,5 +119,19 @@ class ViewController: UIViewController, GameMasterViewDelegate {
             self.stackView.removeArrangedSubview(personView)
             self.peopleViews.removeValue(forKey: person.id)
         }
+    }
+    
+    // MARK: - Events
+    
+    @IBAction func priceIncreasePressed(_ sender: UIButton) {
+        print("Increase price pressed")
+    }
+    
+    @IBAction func priceDecresePressed(_ sender: UIButton) {
+        print("Decrease price pressed")
+    }
+    
+    @IBAction func upgradeSpeedPressed(_ sender: UIButton) {
+        print("upgrade speed pressed")
     }
 }

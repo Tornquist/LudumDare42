@@ -46,27 +46,116 @@
                                     <constraint firstItem="z8A-qQ-26d" firstAttribute="top" secondItem="ldI-Ti-EJl" secondAttribute="top" id="T2h-7r-AvI"/>
                                 </constraints>
                             </scrollView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzq-NU-jbE">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="74"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zom-eS-UUR">
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="74"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Reputation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSb-mh-ypa">
+                                <rect key="frame" x="16" y="16" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7p-H2-yMb" userLabel="Money">
+                                <rect key="frame" x="16" y="41" width="52" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAZ-wr-IYY">
+                                <rect key="frame" x="115" y="45" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nt7-lv-O65">
+                                <rect key="frame" x="115" y="26" width="413" height="2"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btb-4l-DwP">
+                                <rect key="frame" x="621" y="12" width="30" height="30"/>
+                                <state key="normal" title="🔼"/>
+                                <connections>
+                                    <action selector="priceIncreasePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAy-hx-9b9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MA-Qb-ub3">
+                                <rect key="frame" x="582" y="16" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-xu-fbt">
+                                <rect key="frame" x="544" y="12" width="30" height="30"/>
+                                <state key="normal" title="🔽"/>
+                                <connections>
+                                    <action selector="priceDecresePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4cU-kY-7aP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trY-g7-dVN">
+                                <rect key="frame" x="543.5" y="41" width="108" height="30"/>
+                                <state key="normal" title="Upgrade Speed"/>
+                                <connections>
+                                    <action selector="upgradeSpeedPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DU1-pj-QrT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ldI-Ti-EJl" secondAttribute="trailing" id="20O-V1-ILz"/>
+                            <constraint firstItem="trY-g7-dVN" firstAttribute="baseline" secondItem="O7p-H2-yMb" secondAttribute="baseline" id="31j-Rk-BzX"/>
+                            <constraint firstItem="uAZ-wr-IYY" firstAttribute="baseline" secondItem="O7p-H2-yMb" secondAttribute="baseline" id="5If-vi-y7u"/>
+                            <constraint firstItem="yzq-NU-jbE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6UC-pd-Xws"/>
+                            <constraint firstItem="yzq-NU-jbE" firstAttribute="bottom" secondItem="O7p-H2-yMb" secondAttribute="bottom" constant="8" id="6tb-uc-nuM"/>
+                            <constraint firstItem="O7p-H2-yMb" firstAttribute="leading" secondItem="KSb-mh-ypa" secondAttribute="leading" id="7w5-UT-tDK"/>
+                            <constraint firstItem="trY-g7-dVN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uAZ-wr-IYY" secondAttribute="trailing" constant="8" id="AKg-Rz-ZnQ"/>
+                            <constraint firstItem="uAZ-wr-IYY" firstAttribute="leading" secondItem="nt7-lv-O65" secondAttribute="leading" priority="999" id="AaG-b5-xvy"/>
+                            <constraint firstItem="nt7-lv-O65" firstAttribute="leading" secondItem="KSb-mh-ypa" secondAttribute="trailing" constant="16" id="EeZ-gm-dEQ"/>
+                            <constraint firstItem="trY-g7-dVN" firstAttribute="trailing" secondItem="btb-4l-DwP" secondAttribute="trailing" id="Joe-Tl-zFH"/>
                             <constraint firstAttribute="bottom" secondItem="ldI-Ti-EJl" secondAttribute="bottom" id="Kfa-T3-DUW"/>
+                            <constraint firstItem="nt7-lv-O65" firstAttribute="centerY" secondItem="KSb-mh-ypa" secondAttribute="centerY" id="LM2-cn-sVW"/>
                             <constraint firstItem="OJN-KA-cAX" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" priority="750" id="O4M-hb-WAv"/>
+                            <constraint firstItem="btb-4l-DwP" firstAttribute="baseline" secondItem="KSb-mh-ypa" secondAttribute="baseline" id="OMT-OY-eJN"/>
+                            <constraint firstItem="5MA-Qb-ub3" firstAttribute="leading" secondItem="ODS-xu-fbt" secondAttribute="trailing" constant="8" id="PzN-ji-ETu"/>
                             <constraint firstItem="z8A-qQ-26d" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Rpz-qz-9ux"/>
                             <constraint firstItem="ldI-Ti-EJl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SOJ-s2-Efw"/>
+                            <constraint firstItem="KSb-mh-ypa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Tkv-P8-d3v"/>
+                            <constraint firstAttribute="trailing" secondItem="yzq-NU-jbE" secondAttribute="trailing" id="gBF-Be-fos"/>
+                            <constraint firstItem="ODS-xu-fbt" firstAttribute="leading" secondItem="nt7-lv-O65" secondAttribute="trailing" constant="16" id="hFO-31-pZv"/>
+                            <constraint firstItem="KSb-mh-ypa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="i7d-fk-UlC"/>
+                            <constraint firstItem="uAZ-wr-IYY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="O7p-H2-yMb" secondAttribute="trailing" constant="8" id="n9Y-SV-Rdx"/>
+                            <constraint firstItem="btb-4l-DwP" firstAttribute="leading" secondItem="5MA-Qb-ub3" secondAttribute="trailing" constant="8" id="nG4-Mt-PAa"/>
                             <constraint firstItem="z8A-qQ-26d" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" priority="250" id="oK5-qE-MUO"/>
                             <constraint firstItem="ldI-Ti-EJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oX1-Yo-T87"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="btb-4l-DwP" secondAttribute="trailing" constant="16" id="paL-OD-vne"/>
+                            <constraint firstItem="5MA-Qb-ub3" firstAttribute="baseline" secondItem="btb-4l-DwP" secondAttribute="baseline" id="qta-90-3VG"/>
+                            <constraint firstItem="yzq-NU-jbE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="soi-en-vkL"/>
+                            <constraint firstItem="O7p-H2-yMb" firstAttribute="top" secondItem="KSb-mh-ypa" secondAttribute="bottom" constant="4" id="yDA-hD-yVT"/>
+                            <constraint firstItem="trY-g7-dVN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5MA-Qb-ub3" secondAttribute="bottom" constant="4" id="z3D-iK-0PI"/>
+                            <constraint firstItem="5MA-Qb-ub3" firstAttribute="baseline" secondItem="ODS-xu-fbt" secondAttribute="baseline" id="z5X-Jt-Ftc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decreasePriceButton" destination="ODS-xu-fbt" id="YAL-gm-5ct"/>
+                        <outlet property="increasePriceButton" destination="btb-4l-DwP" id="gyo-tM-Ccf"/>
+                        <outlet property="moneyTitle" destination="O7p-H2-yMb" id="ZMh-Ap-5gH"/>
+                        <outlet property="moneyValue" destination="uAZ-wr-IYY" id="8Iv-36-T7s"/>
+                        <outlet property="priceLabel" destination="5MA-Qb-ub3" id="Jz1-cv-3qX"/>
+                        <outlet property="reputationLabel" destination="KSb-mh-ypa" id="6zc-Zn-Lyq"/>
+                        <outlet property="reputationView" destination="nt7-lv-O65" id="Xgx-yz-wLr"/>
                         <outlet property="scrollView" destination="ldI-Ti-EJl" id="RY6-d8-Koz"/>
                         <outlet property="stackView" destination="OJN-KA-cAX" id="xD6-HI-bjl"/>
+                        <outlet property="upgradeSpeedButton" destination="trY-g7-dVN" id="Pam-T5-rh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82" y="-164"/>
+            <point key="canvasLocation" x="-82.3088455772114" y="-164"/>
         </scene>
     </scenes>
 </document>
