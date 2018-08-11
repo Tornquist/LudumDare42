@@ -13,6 +13,7 @@ protocol GameMasterDelegate: class {
     func emailSent(by person: Person)
     func personDied(_ person: Person)
     func updateView(for person: Person)
+    func bill(_ person: Person)
 }
 
 protocol GameMasterViewDelegate: class {
@@ -33,13 +34,15 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     var reputation: Int = 50 { didSet { self.updateBirthRate() }}
     var money: Int = 0
-    var price: Int = 20 { didSet { self.updateBirthRate() }}
+    var price: Int = 90 { didSet { self.updateBirthRate() }}
     var upgradePrice: Int = 80
     var backupRate: Int = 3
     
     let maxPrice: Int = 150
     let minPrice: Int = 5
+    let reputationIncrease: Int = 1
     let reputationCost: Int = 5
+    let maxReputation: Int = 100
     
     weak var viewDelegate: GameMasterViewDelegate!
     
@@ -51,7 +54,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         self.birthRate = 0.2
         self.reputation = 50
         self.money = 0
-        self.price = 20
+        self.price = 90
         self.upgradePrice = 80
         self.backupRate = 3
         
@@ -84,7 +87,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     }
     
     func newPerson() {
-        let newPerson = Person()
+        let newPerson = Person(rate: self.price)
         newPerson.delegate = self
         people.append(newPerson)
         self.viewDelegate?.add(person: newPerson)
@@ -98,6 +101,11 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func photoTaken(by person: Person) {
         self.viewDelegate?.showPhotoFor(person: person)
+    }
+    
+    func bill(_ person: Person) {
+        self.money += person.planCost
+        self.earnReputation()
     }
     
     func updateView(for person: Person) {
@@ -138,6 +146,12 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     
     func canUpgrade() -> Bool {
         return self.money >= self.upgradePrice
+    }
+    
+    func earnReputation() {
+        self.reputation += self.reputationIncrease
+        self.reputation = min(self.reputation, self.maxReputation)
+        self.sendNavUpdate()
     }
     
     func sendNavUpdate() {
@@ -181,8 +195,8 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     func upgradeSpeed() {
         if self.canUpgrade() {
             self.money = self.money - self.upgradePrice
-            self.upgradePrice = Int(Double(self.upgradePrice) * 1.5)
-            self.backupRate = Int(Double(self.backupRate) * 1.5)
+            self.upgradePrice = Int(Double(self.upgradePrice) * 2)
+            self.backupRate = Int(Double(self.backupRate) * 1.4)
         }
         self.sendNavUpdate()
     }

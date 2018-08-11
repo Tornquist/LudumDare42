@@ -14,22 +14,29 @@ class Person {
     // Ranges from 0 -> 100
     var memory: Int
     
+    var planCost: Int
+    
     var photoRate: Float
     var emailRate: Float
     
     var schedule: Schedule
     
     var alive: Bool
+    var wasAsleep: Bool
     
     weak var delegate: GameMasterDelegate?
     
-    init() {
+    init(rate: Int) {
         self.id = UUID().uuidString
+        
+        self.planCost = rate
+        
         self.memory = 0
         self.alive = true
         self.photoRate = Float(arc4random_uniform(100)) / 100
         self.emailRate = Float(arc4random_uniform(100)) / 100
         self.schedule = Schedule(at: .morning)
+        self.wasAsleep = false
     }
     
     func gameStep() {
@@ -37,8 +44,14 @@ class Person {
         
         self.schedule.incrementTime()
         guard self.schedule.awake else {
+            self.wasAsleep = true
             self.delegate?.updateView(for: self)
             return
+        }
+        
+        if self.wasAsleep {
+            self.delegate?.bill(self)
+            self.wasAsleep = false
         }
         
         let random = Float(arc4random_uniform(100)) / 100
