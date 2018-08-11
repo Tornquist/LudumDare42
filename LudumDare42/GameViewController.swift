@@ -32,6 +32,7 @@ class GameViewController: UIViewController, GameMasterViewDelegate {
     @IBOutlet weak var gameOverTitle: UILabel!
     @IBOutlet weak var gameOverMessage: UILabel!
     @IBOutlet weak var gameOverButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     
     // Other
     
@@ -93,6 +94,8 @@ class GameViewController: UIViewController, GameMasterViewDelegate {
         
         self.gameOverTitle.text = NSLocalizedString("Game Over", comment: "")
         self.gameOverMessage.text = "You lost."
+        self.menuButton.setTitle(NSLocalizedString("Quit", comment: ""), for: .normal)
+        self.menuButton.setTitleColor(.red, for: .normal)
         
         self.gameOverEffectView.isHidden = true
         self.gameOverContentView.isHidden = true
@@ -220,5 +223,9 @@ class GameViewController: UIViewController, GameMasterViewDelegate {
     @IBAction func retryPressed(_ sender: UIButton) {
         self.gameMaster.newGame()
         self.gameMaster.startGame()
+    }
+    
+    @IBAction func menuPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -135,6 +135,9 @@
                                         <state key="normal" title="Play">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="playPressed:" destination="7Yh-HV-Apx" eventType="touchUpInside" id="Vbe-PB-H38"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nv-Lc-d7z">
                                         <rect key="frame" x="333.5" y="0.0" width="333.5" height="127.5"/>
@@ -142,6 +145,9 @@
                                         <state key="normal" title="About">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="aboutPressed:" destination="7Yh-HV-Apx" eventType="touchUpInside" id="tZB-f3-gzb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -170,6 +176,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NUJ-4R-95E"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutButton" destination="8nv-Lc-d7z" id="Iix-pQ-Lns"/>
+                        <outlet property="gameSubtitle" destination="qMO-0x-S3F" id="Leo-mu-0yg"/>
+                        <outlet property="gameTitle" destination="NBu-Dm-hCP" id="WA7-WO-Cy1"/>
+                        <outlet property="playButton" destination="fhf-Ck-g3w" id="O6I-IR-pX7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FC-SZ-id3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,7 +190,7 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="LudumDare42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameView" id="BYZ-38-t0r" customClass="GameViewController" customModule="LudumDare42" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -317,16 +329,28 @@
                                             <action selector="retryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3wy-IA-LrG"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygm-Aq-95D" userLabel="Menu Button">
+                                        <rect key="frame" x="278" y="83.5" width="40" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Menu"/>
+                                        <connections>
+                                            <action selector="menuPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frx-vj-1Ag"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ygm-Aq-95D" secondAttribute="trailing" constant="16" id="0W4-8K-Ubu"/>
                                     <constraint firstAttribute="bottom" secondItem="aFd-V4-XSp" secondAttribute="bottom" id="3YM-DJ-1SC"/>
                                     <constraint firstItem="wyw-Nc-RHp" firstAttribute="top" secondItem="etM-Ly-azU" secondAttribute="bottom" constant="8" id="4bw-N7-dow"/>
                                     <constraint firstItem="aFd-V4-XSp" firstAttribute="top" secondItem="wyw-Nc-RHp" secondAttribute="bottom" constant="8" id="5iS-rM-w03"/>
+                                    <constraint firstItem="Ygm-Aq-95D" firstAttribute="baseline" secondItem="aFd-V4-XSp" secondAttribute="baseline" id="G2l-pa-KdS"/>
                                     <constraint firstAttribute="trailing" secondItem="wyw-Nc-RHp" secondAttribute="trailing" constant="16" id="Get-RJ-nqu"/>
                                     <constraint firstItem="etM-Ly-azU" firstAttribute="leading" secondItem="aIA-I8-9ev" secondAttribute="leading" constant="16" id="Hqb-c0-09V"/>
                                     <constraint firstItem="aFd-V4-XSp" firstAttribute="leading" secondItem="aIA-I8-9ev" secondAttribute="leading" constant="16" id="JnD-iw-qkf"/>
                                     <constraint firstItem="etM-Ly-azU" firstAttribute="top" secondItem="aIA-I8-9ev" secondAttribute="top" id="SFh-T1-CXI"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ygm-Aq-95D" secondAttribute="bottom" id="Y1B-9x-W0M"/>
+                                    <constraint firstItem="Ygm-Aq-95D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aFd-V4-XSp" secondAttribute="trailing" constant="16" id="h10-dA-MLR"/>
                                     <constraint firstItem="wyw-Nc-RHp" firstAttribute="leading" secondItem="aIA-I8-9ev" secondAttribute="leading" constant="16" id="iUa-8t-ZLY"/>
                                     <constraint firstAttribute="trailing" secondItem="etM-Ly-azU" secondAttribute="trailing" constant="16" id="joi-Gz-X3J"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aFd-V4-XSp" secondAttribute="trailing" constant="16" id="nhK-Z3-eAD"/>
@@ -396,6 +420,7 @@
                         <outlet property="increasePriceButton" destination="btb-4l-DwP" id="gyo-tM-Ccf"/>
                         <outlet property="marketShareLabel" destination="he4-9R-d8D" id="gHM-Sf-G6z"/>
                         <outlet property="maxMarketShare" destination="tZC-Kr-qSP" id="4kY-Xz-YGB"/>
+                        <outlet property="menuButton" destination="Ygm-Aq-95D" id="rAW-9x-Kzn"/>
                         <outlet property="moneyTitle" destination="O7p-H2-yMb" id="ZMh-Ap-5gH"/>
                         <outlet property="moneyValue" destination="uAZ-wr-IYY" id="8Iv-36-T7s"/>
                         <outlet property="priceLabel" destination="5MA-Qb-ub3" id="Jz1-cv-3qX"/>
