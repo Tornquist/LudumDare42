@@ -24,6 +24,7 @@
 		D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901D0211F1D2F00422F4B /* PersonView.swift */; };
 		D8F2640A211F82B300867BEF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26409211F82B300867BEF /* Schedule.swift */; };
 		D8F2640C211FA32C00867BEF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2640B211FA32C00867BEF /* MenuViewController.swift */; };
+		D8F2640F211FADB100867BEF /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2640E211FADB100867BEF /* InstructionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D8B901D0211F1D2F00422F4B /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		D8F26409211F82B300867BEF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D8F2640B211FA32C00867BEF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D8F2640E211FADB100867BEF /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				D8B901D2211F1D3500422F4B /* Interface */,
 				D8B901D3211F1D4000422F4B /* Supporting */,
+				D8F2640D211FAD8E00867BEF /* Instructions */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -144,8 +147,16 @@
 				D8687C44211E5D87006CD833 /* Main.storyboard */,
 				D8F2640B211FA32C00867BEF /* MenuViewController.swift */,
 				D8687C42211E5D87006CD833 /* GameViewController.swift */,
+				D8F2640E211FADB100867BEF /* InstructionsViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8F2640D211FAD8E00867BEF /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Instructions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +243,7 @@
 				D83D58B2211E7D1C00CFC325 /* PhotoView.swift in Sources */,
 				D8AE3D53211F4B8400946F24 /* ParticleType.swift in Sources */,
 				D83D58AE211E74DA00CFC325 /* PhoneView.swift in Sources */,
+				D8F2640F211FADB100867BEF /* InstructionsViewController.swift in Sources */,
 				D83D58B0211E7A2200CFC325 /* EmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

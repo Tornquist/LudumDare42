@@ -35,5 +35,7 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func aboutPressed(_ sender: UIButton) {
+        let instructionsView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "instructionsView")
+        self.present(instructionsView, animated: true, completion: nil)
     }
 }

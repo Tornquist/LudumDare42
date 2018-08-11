@@ -15,7 +15,7 @@
         <!--Menu View Controller-->
         <scene sceneID="T0L-IK-Hh5">
             <objects>
-                <viewController id="7Yh-HV-Apx" customClass="MenuViewController" customModule="LudumDare42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Yh-HV-Apx" customClass="MenuViewController" customModule="SpaceIO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WGM-7R-KcR">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFo-OK-Det" userLabel="Title">
                                         <rect key="frame" x="117" y="71" width="432.5" height="105"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mg-HT-Mki" customClass="PhoneView" customModule="LudumDare42" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mg-HT-Mki" customClass="PhoneView" customModule="SpaceIO" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="105"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -45,7 +45,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEJ-fb-Us8" customClass="PhoneView" customModule="LudumDare42" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEJ-fb-Us8" customClass="PhoneView" customModule="SpaceIO" customModuleProvider="target">
                                                 <rect key="frame" x="68" y="0.0" width="60" height="105"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -64,7 +64,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-ol-tgB" customClass="PhoneView" customModule="LudumDare42" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-ol-tgB" customClass="PhoneView" customModule="SpaceIO" customModuleProvider="target">
                                                 <rect key="frame" x="136" y="0.0" width="60" height="105"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -190,7 +190,7 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="gameView" id="BYZ-38-t0r" customClass="GameViewController" customModule="LudumDare42" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameView" id="BYZ-38-t0r" customClass="GameViewController" customModule="SpaceIO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,6 +434,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-82" y="-170"/>
+        </scene>
+        <!--Instructions View Controller-->
+        <scene sceneID="PN7-wD-F9s">
+            <objects>
+                <viewController storyboardIdentifier="instructionsView" id="FSa-h7-3qZ" customClass="InstructionsViewController" customModule="SpaceIO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hl0-EH-HtC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-OF-KXb">
+                                <rect key="frame" x="0.0" y="58.5" width="667" height="316.5"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD4-PY-322">
+                                <rect key="frame" x="20" y="16.5" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="FSa-h7-3qZ" eventType="touchUpInside" id="nsM-hZ-Fyr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enc-Zh-9Jv">
+                                <rect key="frame" x="304.5" y="16" width="58" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sBI-OF-KXb" secondAttribute="bottom" id="38Y-V5-aUw"/>
+                            <constraint firstAttribute="trailing" secondItem="sBI-OF-KXb" secondAttribute="trailing" id="LX0-Ul-TSY"/>
+                            <constraint firstItem="YD4-PY-322" firstAttribute="leading" secondItem="FaO-rx-sE1" secondAttribute="leading" constant="20" id="ON9-9z-5ky"/>
+                            <constraint firstItem="YD4-PY-322" firstAttribute="baseline" secondItem="Enc-Zh-9Jv" secondAttribute="baseline" id="XAW-9j-gaJ"/>
+                            <constraint firstItem="Enc-Zh-9Jv" firstAttribute="centerX" secondItem="FaO-rx-sE1" secondAttribute="centerX" id="etk-8K-u7X"/>
+                            <constraint firstItem="sBI-OF-KXb" firstAttribute="top" secondItem="Enc-Zh-9Jv" secondAttribute="bottom" constant="16" id="sSU-f5-XU3"/>
+                            <constraint firstItem="Enc-Zh-9Jv" firstAttribute="top" secondItem="FaO-rx-sE1" secondAttribute="top" constant="16" id="vXx-iK-S4Q"/>
+                            <constraint firstItem="sBI-OF-KXb" firstAttribute="leading" secondItem="Hl0-EH-HtC" secondAttribute="leading" id="xC2-ck-dPg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FaO-rx-sE1"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="YD4-PY-322" id="fBH-EL-LON"/>
+                        <outlet property="titleLabel" destination="Enc-Zh-9Jv" id="W7N-Vb-OTB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-20-Gfh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="578"/>
         </scene>
     </scenes>
 </document>
