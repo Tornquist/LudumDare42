@@ -23,8 +23,9 @@ protocol GameMasterViewDelegate: class {
     func showEmailFor(person: Person)
     func showPhotoFor(person: Person)
     func remove(person: Person)
-    func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool)
-    func showGameOver()
+    func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool, currentShare: Float, maxShare: Float)
+    func showVictory()
+    func showGameOver(maxShare: Float)
 }
 
 class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
@@ -38,19 +39,21 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     var price: Int = 90 { didSet { self.updateBirthRate() }}
     var upgradePrice: Int = 80
     var backupRate: Int = 3
+    var maxPeople: Int = 0
     
     let maxPrice: Int = 150
     let minPrice: Int = 5
     let reputationIncrease: Int = 1
     let reputationCost: Int = 6
     let maxReputation: Int = 100
+    let targetPeople: Int = 35
+    let shareForAcquisition: Float = 0.1
     
     weak var viewDelegate: GameMasterViewDelegate!
     
     func newGame() {
         self.viewDelegate?.resetGameBoard()
         self.people.removeAll()
-        self.newPerson()
         
         self.birthRate = 0.2
         self.reputation = 50
@@ -58,7 +61,9 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         self.price = 90
         self.upgradePrice = 80
         self.backupRate = 3
+        self.maxPeople = 0
         
+        self.newPerson()
         self.sendNavUpdate()
     }
     
@@ -91,7 +96,13 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         let newPerson = Person(rate: self.price)
         newPerson.delegate = self
         people.append(newPerson)
+        if people.count > self.maxPeople {
+            self.maxPeople = people.count
+        }
+        
         self.viewDelegate?.add(person: newPerson)
+        self.sendNavUpdate()
+        self.checkGameState()
     }
     
     // MARK: - Game Master
@@ -165,7 +176,14 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     }
     
     func sendNavUpdate() {
-        self.viewDelegate?.refreshNav(reputation: self.reputation, money: self.money, price: self.price, upgradeEnabled: self.canUpgrade())
+        self.viewDelegate?.refreshNav(
+            reputation: self.reputation,
+            money: self.money,
+            price: self.price,
+            upgradeEnabled: self.canUpgrade(),
+            currentShare: Float(self.people.count) / Float(self.targetPeople),
+            maxShare: Float(self.maxPeople) / Float(self.targetPeople)
+        )
     }
     
     func updateBirthRate() {
@@ -189,12 +207,21 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     }
     
     func checkGameState() {
-        if self.reputation > 0 {
-            return
-        }
+        let victory = self.people.count >= self.targetPeople
+        let defeat = self.reputation <= 0
+        
+        guard victory || defeat else { return }
         
         self.stopGame()
-        self.viewDelegate?.showGameOver()
+        
+        if victory {
+            self.viewDelegate?.showVictory()
+        } else {
+            self.viewDelegate?.showGameOver(maxShare:
+                Float(self.maxPeople) / Float(self.targetPeople) * shareForAcquisition
+            )
+
+        }
     }
     
     // MARK: - Pricing

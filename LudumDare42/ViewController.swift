@@ -23,6 +23,9 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     @IBOutlet weak var increasePriceButton: UIButton!
     @IBOutlet weak var decreasePriceButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var marketShareLabel: UILabel!
+    @IBOutlet weak var maxMarketShare: UIProgressView!
+    @IBOutlet weak var currentMarketShare: UIProgressView!
     
     @IBOutlet weak var gameOverEffectView: UIVisualEffectView!
     @IBOutlet weak var gameOverContentView: UIView!
@@ -79,6 +82,14 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         self.upgradeSpeedButton.setTitleColor(.gray, for: .disabled)
         self.upgradeSpeedButton.setTitle(NSLocalizedString("Upgrade Speed", comment: ""), for: .normal)
         self.upgradeSpeedButton.isEnabled = false
+        
+        self.marketShareLabel.text = NSLocalizedString("Market", comment: "")
+        self.marketShareLabel.textColor = .white
+        // maxMarketShare uses default progressView colors
+        self.maxMarketShare.setProgress(0, animated: false)
+        self.currentMarketShare.trackTintColor = .clear
+        self.currentMarketShare.progressTintColor = .green
+        self.currentMarketShare.setProgress(0, animated: false)
         
         self.gameOverTitle.text = NSLocalizedString("Game Over", comment: "")
         self.gameOverMessage.text = "You lost."
@@ -157,7 +168,7 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         }
     }
     
-    func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool) {
+    func refreshNav(reputation: Int, money: Int, price: Int, upgradeEnabled: Bool, currentShare: Float, maxShare: Float) {
         let reputationPercent = Float(reputation) / 100.0
         self.reputationView.setProgress(reputationPercent, animated: true)
         let reputationColor: UIColor = reputationPercent > 0.66 ? .green : (reputationPercent > 0.33 ? .yellow : .red)
@@ -167,11 +178,29 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         self.priceLabel.text = "$\(price)"
         
         self.upgradeSpeedButton.isEnabled = upgradeEnabled
+        
+        self.currentMarketShare.setProgress(currentShare, animated: true)
+        self.maxMarketShare.setProgress(maxShare, animated: true)
     }
     
-    func showGameOver() {
+    func showVictory() {
         self.gameOverEffectView.isHidden = false
         self.gameOverContentView.isHidden = false
+        
+        self.gameOverTitle.text = NSLocalizedString("You Win!", comment: "")
+        self.gameOverMessage.text = NSLocalizedString("You earned enough market share to get acquired. Enjoy your long vacation!", comment: "")
+        self.gameOverButton.setTitle(NSLocalizedString("Replay", comment: ""), for: .normal)
+    }
+    
+    func showGameOver(maxShare: Float) {
+        self.gameOverEffectView.isHidden = false
+        self.gameOverContentView.isHidden = false
+        
+        let marketShareString = String(format: "%.3f", maxShare)
+        
+        self.gameOverTitle.text = NSLocalizedString("Game Over", comment: "")
+        self.gameOverMessage.text = NSLocalizedString("Your reputation went too low. There's no recovering from that.\n\nMax Market Share: \(marketShareString)%", comment: "")
+        self.gameOverButton.setTitle(NSLocalizedString("Retry", comment: ""), for: .normal)
     }
     
     // MARK: - Events
