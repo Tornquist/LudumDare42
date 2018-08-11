@@ -22,6 +22,7 @@ class PersonView: UIView {
     weak var delegate: PersonViewEventsDelegate?
     
     var view: UIView!
+    var backgroundColorView: UIView!
     @IBOutlet weak var phoneView: PhoneView!
     
     override init(frame: CGRect) {
@@ -108,6 +109,8 @@ class PersonView: UIView {
             return
         }
         
+        self.backgroundColorView.backgroundColor = person.schedule.phase.getColor()
+        
         let memoryPercent = CGFloat(person.memory) / 100
         if (phoneView.memoryPercent != memoryPercent) {
             phoneView.memoryPercent = memoryPercent
@@ -125,7 +128,7 @@ class PersonView: UIView {
         
         UIView.animate(withDuration: 1, animations: {
             self.phoneView.alpha = 0
-            self.backgroundColor = .red
+            self.backgroundColorView.backgroundColor = .red
         }) { (done) in
             self.delegate?.deathAnimationComplete(forID: self.personID)
         }

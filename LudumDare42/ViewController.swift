@@ -29,6 +29,7 @@ class ViewController: UIViewController, GameMasterViewDelegate {
     
     let gameMaster = GameMaster()
     var peopleViews: [String: PersonView] = [:]
+    var backgroundViews: [String: UIView] = [:]
     
     // MARK: - Lifecycle
     
@@ -90,8 +91,21 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         personView.personID = person.id
         personView.delegate = self.gameMaster
         
+        let personViewBackground = UIView(frame: .zero)
+        personViewBackground.translatesAutoresizingMaskIntoConstraints = false
+        
+        let top = NSLayoutConstraint(item: personView, attribute: .top, relatedBy: .equal, toItem: personViewBackground, attribute: .top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: personView, attribute: .bottom, relatedBy: .equal, toItem: personViewBackground, attribute: .bottom, multiplier: 1, constant: 0)
+        let left = NSLayoutConstraint(item: personView, attribute: .left, relatedBy: .equal, toItem: personViewBackground, attribute: .left, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: personView, attribute: .right, relatedBy: .equal, toItem: personViewBackground, attribute: .right, multiplier: 1, constant: 0)
+        
+        personView.backgroundColorView = personViewBackground
+        
         self.peopleViews[person.id] = personView
+        self.backgroundViews[person.id] = personViewBackground
         self.stackView.addArrangedSubview(personView)
+        self.view.insertSubview(personViewBackground, belowSubview: self.scrollView)
+        self.view.addConstraints([top, bottom, left, right])
     }
     
     func showEmailFor(person: Person) {
@@ -118,6 +132,9 @@ class ViewController: UIViewController, GameMasterViewDelegate {
         if let personView = peopleViews[person.id] {
             self.stackView.removeArrangedSubview(personView)
             self.peopleViews.removeValue(forKey: person.id)
+            
+            self.backgroundViews[person.id]?.removeFromSuperview()
+            self.backgroundViews.removeValue(forKey: person.id)
         }
     }
     

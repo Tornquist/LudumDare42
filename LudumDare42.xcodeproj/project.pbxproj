@@ -24,6 +24,7 @@
 		D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901CC211F17F400422F4B /* PersonInactiveView.swift */; };
 		D8B901CF211F1B3E00422F4B /* PersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B901CE211F1B3E00422F4B /* PersonView.xib */; };
 		D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B901D0211F1D2F00422F4B /* PersonView.swift */; };
+		D8F2640A211F82B300867BEF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26409211F82B300867BEF /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D8B901CC211F17F400422F4B /* PersonInactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInactiveView.swift; sourceTree = "<group>"; };
 		D8B901CE211F1B3E00422F4B /* PersonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonView.xib; sourceTree = "<group>"; };
 		D8B901D0211F1D2F00422F4B /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		D8F26409211F82B300867BEF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				D8AE3D4B211F3A4200946F24 /* GameMaster.swift */,
 				D8AE3D47211F2A6E00946F24 /* Person.swift */,
 				D8AE3D49211F349900946F24 /* Costs.swift */,
+				D8F26409211F82B300867BEF /* Schedule.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				D8AE3D48211F2A6E00946F24 /* Person.swift in Sources */,
 				D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */,
+				D8F2640A211F82B300867BEF /* Schedule.swift in Sources */,
 				D8AE3D4A211F349900946F24 /* Costs.swift in Sources */,
 				D8B901CD211F17F400422F4B /* PersonInactiveView.swift in Sources */,
 				D8687C49211E5D87006CD833 /* LudumDare42.xcdatamodeld in Sources */,

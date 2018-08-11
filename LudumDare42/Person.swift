@@ -17,6 +17,8 @@ class Person {
     var photoRate: Float
     var emailRate: Float
     
+    var schedule: Schedule
+    
     var alive: Bool
     
     weak var delegate: GameMasterDelegate?
@@ -27,6 +29,7 @@ class Person {
         self.alive = true
         self.photoRate = Float(arc4random_uniform(100)) / 100
         self.emailRate = Float(arc4random_uniform(100)) / 100
+        self.schedule = Schedule(at: .morning)
     }
     
     func gameStep() {
