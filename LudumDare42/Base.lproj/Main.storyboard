@@ -112,7 +112,6 @@
                                             <constraint firstItem="NBu-Dm-hCP" firstAttribute="leading" secondItem="R8I-ol-tgB" secondAttribute="trailing" constant="16" id="qrG-fD-3fg"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qMO-0x-S3F" secondAttribute="trailing" constant="8" id="tJb-tG-uTV"/>
                                             <constraint firstItem="AEJ-fb-Us8" firstAttribute="leading" secondItem="8mg-HT-Mki" secondAttribute="trailing" constant="8" id="vqA-ns-6S6"/>
-                                            <constraint firstItem="AEJ-fb-Us8" firstAttribute="width" secondItem="AEJ-fb-Us8" secondAttribute="height" multiplier="0.5714" id="ytF-DV-XG8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -494,6 +493,7 @@
                     <connections>
                         <outlet property="backButton" destination="YD4-PY-322" id="fBH-EL-LON"/>
                         <outlet property="scrollView" destination="sBI-OF-KXb" id="HOr-ma-qbV"/>
+                        <outlet property="scrollViewContentView" destination="ObQ-hh-RRn" id="dQI-8P-1JQ"/>
                         <outlet property="titleLabel" destination="Enc-Zh-9Jv" id="W7N-Vb-OTB"/>
                     </connections>
                 </viewController>
