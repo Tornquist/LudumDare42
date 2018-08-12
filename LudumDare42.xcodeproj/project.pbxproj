@@ -25,6 +25,8 @@
 		D8F2640A211F82B300867BEF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26409211F82B300867BEF /* Schedule.swift */; };
 		D8F2640C211FA32C00867BEF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2640B211FA32C00867BEF /* MenuViewController.swift */; };
 		D8F2640F211FADB100867BEF /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2640E211FADB100867BEF /* InstructionsViewController.swift */; };
+		D8F26411211FAF1500867BEF /* InstructionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F26410211FAF1500867BEF /* InstructionsView.xib */; };
+		D8F26413211FB0B600867BEF /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F26412211FB0B600867BEF /* InstructionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D8F26409211F82B300867BEF /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D8F2640B211FA32C00867BEF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D8F2640E211FADB100867BEF /* InstructionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		D8F26410211FAF1500867BEF /* InstructionsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsView.xib; sourceTree = "<group>"; };
+		D8F26412211FB0B600867BEF /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,8 @@
 		D8F2640D211FAD8E00867BEF /* Instructions */ = {
 			isa = PBXGroup;
 			children = (
+				D8F26410211FAF1500867BEF /* InstructionsView.xib */,
+				D8F26412211FB0B600867BEF /* InstructionsView.swift */,
 			);
 			name = Instructions;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8687C4E211E5D88006CD833 /* LaunchScreen.storyboard in Resources */,
+				D8F26411211FAF1500867BEF /* InstructionsView.xib in Resources */,
 				D8B901CF211F1B3E00422F4B /* PersonView.xib in Resources */,
 				D8687C4B211E5D88006CD833 /* Assets.xcassets in Resources */,
 				D8687C46211E5D87006CD833 /* Main.storyboard in Resources */,
@@ -232,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8AE3D48211F2A6E00946F24 /* Person.swift in Sources */,
+				D8F26413211FB0B600867BEF /* InstructionsView.swift in Sources */,
 				D8F2640C211FA32C00867BEF /* MenuViewController.swift in Sources */,
 				D8B901D1211F1D2F00422F4B /* PersonView.swift in Sources */,
 				D8F2640A211F82B300867BEF /* Schedule.swift in Sources */,

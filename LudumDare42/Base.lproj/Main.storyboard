@@ -445,6 +445,21 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-OF-KXb">
                                 <rect key="frame" x="0.0" y="58.5" width="667" height="316.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObQ-hh-RRn">
+                                        <rect key="frame" x="0.0" y="0.0" width="667" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="750" constant="50" id="8l9-xZ-gGD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ObQ-hh-RRn" firstAttribute="leading" secondItem="sBI-OF-KXb" secondAttribute="leading" id="ATd-Hv-kdf"/>
+                                    <constraint firstAttribute="bottom" secondItem="ObQ-hh-RRn" secondAttribute="bottom" id="U9P-67-ayH"/>
+                                    <constraint firstItem="ObQ-hh-RRn" firstAttribute="top" secondItem="sBI-OF-KXb" secondAttribute="top" id="eza-RZ-jvF"/>
+                                    <constraint firstAttribute="trailing" secondItem="ObQ-hh-RRn" secondAttribute="trailing" id="ses-D6-K4j"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YD4-PY-322">
                                 <rect key="frame" x="20" y="16.5" width="34" height="30"/>
@@ -469,6 +484,7 @@
                             <constraint firstItem="YD4-PY-322" firstAttribute="leading" secondItem="FaO-rx-sE1" secondAttribute="leading" constant="20" id="ON9-9z-5ky"/>
                             <constraint firstItem="YD4-PY-322" firstAttribute="baseline" secondItem="Enc-Zh-9Jv" secondAttribute="baseline" id="XAW-9j-gaJ"/>
                             <constraint firstItem="Enc-Zh-9Jv" firstAttribute="centerX" secondItem="FaO-rx-sE1" secondAttribute="centerX" id="etk-8K-u7X"/>
+                            <constraint firstItem="ObQ-hh-RRn" firstAttribute="width" secondItem="FaO-rx-sE1" secondAttribute="width" id="q9O-ba-mAf"/>
                             <constraint firstItem="sBI-OF-KXb" firstAttribute="top" secondItem="Enc-Zh-9Jv" secondAttribute="bottom" constant="16" id="sSU-f5-XU3"/>
                             <constraint firstItem="Enc-Zh-9Jv" firstAttribute="top" secondItem="FaO-rx-sE1" secondAttribute="top" constant="16" id="vXx-iK-S4Q"/>
                             <constraint firstItem="sBI-OF-KXb" firstAttribute="leading" secondItem="Hl0-EH-HtC" secondAttribute="leading" id="xC2-ck-dPg"/>
@@ -477,6 +493,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="YD4-PY-322" id="fBH-EL-LON"/>
+                        <outlet property="scrollView" destination="sBI-OF-KXb" id="HOr-ma-qbV"/>
                         <outlet property="titleLabel" destination="Enc-Zh-9Jv" id="W7N-Vb-OTB"/>
                     </connections>
                 </viewController>
