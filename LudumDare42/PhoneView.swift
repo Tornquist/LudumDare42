@@ -23,16 +23,27 @@ class PhoneView: UIView {
     // Context
     let paintCodeWidth: CGFloat = 80
     let paintCodeHeight: CGFloat = 140
-    let paintCodeScreenOffsetX: CGFloat = 10
-    let paintCodeScreenOffsetY: CGFloat = 10
-    let paintCodeScreenWidth: CGFloat = 60
-    let paintCodeScreenHeight: CGFloat = 110
+    let paintCodeScreenOffsetX: CGFloat = 3
+    let paintCodeScreenOffsetY: CGFloat = 12
+    let paintCodeScreenWidth: CGFloat = 74
+    let paintCodeScreenHeight: CGFloat = 116
     let paintCodePhoneCorner: CGFloat = 10
     let paintCodeScreenCorner: CGFloat = 2
     
-    let paintCodeButtonX: CGFloat = 33
-    let paintCodeButtonY: CGFloat = 123
-    let paintCodeButtonSize: CGFloat = 14
+    let paintCodeButtonX: CGFloat = 26
+    let paintCodeButtonY: CGFloat = 131
+    let paintCodeButtonWidth: CGFloat = 28
+    let paintCodeButtonHeight: CGFloat = 6
+    let paintCodeButtonCornerRadius: CGFloat = 3
+    
+    let paintCodeAccentCorner: CGFloat = 2.5
+    let paintCodeTopSmallAccentX: CGFloat = 23
+    let paintCodeTopSmallAccentY: CGFloat = 4
+    let paintCodeTopSmallAccentSize: CGFloat = 5
+    let paintCodeTopLargeAccentX: CGFloat = 31
+    let paintCodeTopLargeAccentY: CGFloat = 4
+    let paintCodeTopLargeAccentWidth: CGFloat = 26
+    let paintCodeTopLargeAccentHeight: CGFloat = 5
     
     // 0 -> 1: 0 = no memory used
     @IBInspectable var memoryPercent: CGFloat = 0
@@ -51,7 +62,18 @@ class PhoneView: UIView {
         
         let buttonX = paintCodeButtonX / paintCodeWidth * rect.width
         let buttonY = paintCodeButtonY / paintCodeHeight * rect.height
-        let buttonSize = paintCodeButtonSize / paintCodeWidth * rect.width
+        let buttonWidth = paintCodeButtonWidth / paintCodeWidth * rect.width
+        let buttonHeight = paintCodeButtonHeight / paintCodeHeight * rect.height
+        let buttonCornerRadius = paintCodeButtonCornerRadius / paintCodeWidth * rect.width
+        
+        let accentCorner = paintCodeAccentCorner / paintCodeWidth * rect.width
+        let topSmallAccentX = paintCodeTopSmallAccentX / paintCodeWidth * rect.width
+        let topSmallAccentY = paintCodeTopSmallAccentY / paintCodeHeight * rect.height
+        let topSmallAccentSize = paintCodeTopSmallAccentSize / paintCodeWidth * rect.width
+        let topLargeAccentX = paintCodeTopLargeAccentX / paintCodeWidth * rect.width
+        let topLargeAccentY = paintCodeTopLargeAccentY / paintCodeHeight * rect.height
+        let topLargeAccentWidth = paintCodeTopLargeAccentWidth / paintCodeWidth * rect.width
+        let topLargeAccentHeight = paintCodeTopLargeAccentHeight / paintCodeHeight * rect.height
         
         // Variable Declarations
         let memoryInverse: CGFloat = 1 - memoryPercent
@@ -70,9 +92,18 @@ class PhoneView: UIView {
         screenPath.fill()
         
         // Button Drawing
-        let buttonPath = UIBezierPath(ovalIn: CGRect(x: buttonX, y: buttonY, width: buttonSize, height: buttonSize))
+        let buttonPath = UIBezierPath(roundedRect: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight), cornerRadius: buttonCornerRadius)
         screenColor.setFill()
         buttonPath.fill()
+        
+        // Accent Drawing
+        let topLargeAccentPath = UIBezierPath(roundedRect: CGRect(x: topLargeAccentX, y: topLargeAccentY, width: topLargeAccentWidth, height: topLargeAccentHeight), cornerRadius: accentCorner)
+        screenColor.setFill()
+        topLargeAccentPath.fill()
+        
+        let topSmallAccentPath = UIBezierPath(roundedRect: CGRect(x: topSmallAccentX, y: topSmallAccentY, width: topSmallAccentSize, height: topSmallAccentSize), cornerRadius: accentCorner)
+        screenColor.setFill()
+        topSmallAccentPath.fill()
         
         // MemoryIndicator Drawing
         let memoryIndicatorPath = UIBezierPath(roundedRect: CGRect(x: screenXStart, y: memoryY, width: screenWidth, height: memoryHeight), cornerRadius: screenCorner)
