@@ -14,11 +14,12 @@ You have to choose how and when to back up their data. If their phones fill up, 
 
 ## Screenshots and Videos
 
-[YouTube Demo Video](https://youtu.be/-zD6PZJYJvg)
+[YouTube Demo Video](https://youtu.be/Zgy6vgZ-EG4)
 
 ![Home Screen](Docs/Images/home.png)
 
 ![Gameplay 1](Docs/Images/gameplay_1.png)
+
 ![Gameplay 2](Docs/Images/gameplay_2.png)
 
 ![Game Over](Docs/Images/gameover.png)
@@ -30,6 +31,11 @@ You have to choose how and when to back up their data. If their phones fill up, 
 1. Balance mechanics, allow more control over types of infrastructure upgrades.
 1. More dynamic icons (email can be colored, etc.)
 1. More variety and care in generation of customers. Right now it's just a random rate for both email and picture taking.
+
+## Changelog
+
+* v1.0b2 - Updated phone graphic to avoid trademark issues
+* v1.0b1 - Initial Ludum Dare 42 entry
 
 ## Details
 
