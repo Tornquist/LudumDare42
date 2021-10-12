@@ -42,7 +42,7 @@ class PersonView: UIView {
     func loadViewFromNib() {
         let bundle = Bundle.main
         let nib = UINib(nibName: "PersonView", bundle: bundle)
-        self.view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        self.view = (nib.instantiate(withOwner: self, options: nil)[0] as! UIView)
         self.view.frame = bounds
         self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

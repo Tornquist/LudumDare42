@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GameMasterDelegate: class {
+protocol GameMasterDelegate: AnyObject {
     func photoTaken(by person: Person)
     func emailSent(by person: Person)
     func personDied(_ person: Person)
@@ -16,7 +16,7 @@ protocol GameMasterDelegate: class {
     func bill(_ person: Person)
 }
 
-protocol GameMasterViewDelegate: class {
+protocol GameMasterViewDelegate: AnyObject {
     func resetGameBoard()
     func add(person: Person)
     func update(person: Person)
@@ -71,7 +71,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
         gameTimer?.invalidate()   // just in case you had existing `Timer`, `invalidate` it before we lose our reference to it
         
         gameTimer = Timer(timeInterval: 0.5, target: self, selector: #selector(gameStep), userInfo: nil, repeats: true)
-        RunLoop.main.add(gameTimer!, forMode: RunLoopMode.commonModes)
+        RunLoop.main.add(gameTimer!, forMode: RunLoop.Mode.common)
     }
     
     func stopGame() {
@@ -142,7 +142,7 @@ class GameMaster: GameMasterDelegate, PersonViewEventsDelegate {
     func deathAnimationComplete(forID personID: String) {
         if let person = self.lookupPerson(withID: personID) {
             self.viewDelegate?.remove(person: person)
-            if let personIndex = people.index(where: { (testPerson) -> Bool in
+            if let personIndex = people.firstIndex(where: { (testPerson) -> Bool in
                 return person.id == testPerson.id
             }) {
                 self.people.remove(at: personIndex)
